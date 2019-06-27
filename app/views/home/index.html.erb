@@ -1,0 +1,16 @@
+
+  <div class="jumbotron bg-warning" style="text-align: center; height: 100px;">
+    <h1 class="display-5">Welcome to My Blog</h1>
+  </div>
+  <hr>
+  <div class="row">
+    <% @posts.each do |post| %>
+    <div class="col-sm-4">
+      <h2><%= post.title %></h2>
+      <p><%= truncate(post.content, length: 160) %></p>
+      <%= link_to 'Read more', post_path(post), class: 'text-dark'%>
+    </div>
+
+    <% end %>
+  </div>
+

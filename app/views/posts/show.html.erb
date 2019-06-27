@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+		<h2 class="mx-auto" style="width: 500px;">
+			 <%= @post.title %>
+		</h2>
+		 <p>
+		  <%= @post.content %>
+		</p>
+
+		<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-dark' %> |
+		<%= link_to 'Back', posts_path, class: 'btn btn-dark' %>
+</div>
+

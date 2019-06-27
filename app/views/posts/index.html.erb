@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="mx-auto" style="width: 500px;">Posts</h1>
+<%= link_to 'New Post', new_post_path, class: 'btn btn-dark mb-2' %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" width="25%">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Show</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Destroy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to 'Show', post, class: 'btn btn-dark' %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-dark' %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
